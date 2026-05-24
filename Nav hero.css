@@ -1,0 +1,164 @@
+/* ═══════════════════════════════
+   nav-hero.css — القائمة والهيرو
+   ═══════════════════════════════ */
+
+/* ───── القائمة ───── */
+nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.2rem 3rem;
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(24px);
+  position:sticky;top:0;z-index:200;
+  background:rgba(10,10,15,.85);
+  transition:padding .3s;
+}
+.logo{
+  font-size:1.4rem;font-weight:900;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  letter-spacing:-1px;text-decoration:none;
+}
+.nav-links{
+  display:flex;gap:0;
+  list-style:none;align-items:center;
+}
+.nav-links li a{
+  color:var(--muted);text-decoration:none;
+  font-size:.88rem;font-weight:500;
+  padding:.5rem 1rem;border-radius:8px;
+  transition:color .25s,background .25s;
+  display:block;
+}
+.nav-links li a:hover{color:var(--text);background:rgba(255,255,255,.05)}
+.nav-links li a.active-link{color:var(--accent2)}
+.nav-cta{
+  margin-right:.5rem;
+  background:linear-gradient(135deg,var(--accent),var(--accent2)) !important;
+  color:#fff !important;
+  padding:.45rem 1.3rem !important;
+  border-radius:50px !important;
+  font-weight:700 !important;font-size:.85rem !important;
+  box-shadow:0 0 18px rgba(108,99,255,.45);
+  transition:transform .2s,box-shadow .2s !important;
+}
+.nav-cta:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 28px rgba(108,99,255,.7) !important;
+}
+
+/* ───── الهيرو ───── */
+.hero{
+  min-height:90vh;display:flex;
+  align-items:center;padding:5rem 3rem;
+  gap:5rem;position:relative;
+}
+.hero::after{
+  content:'';position:absolute;
+  bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--border),transparent);
+}
+.hero-text{flex:1.3}
+
+.badge{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:rgba(108,99,255,.12);
+  border:1px solid rgba(108,99,255,.3);
+  padding:.45rem 1.1rem;border-radius:50px;
+  font-size:.8rem;color:var(--accent);margin-bottom:1.8rem;
+  opacity:0;animation:slideDown .7s cubic-bezier(.22,1,.36,1) .1s forwards;
+}
+.live-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--accent2);box-shadow:0 0 8px var(--accent2);
+  animation:livepulse 1.8s ease infinite;
+}
+h1{
+  font-size:4rem;font-weight:900;line-height:1.08;
+  margin-bottom:1.2rem;letter-spacing:-1px;
+  opacity:0;animation:slideUp .8s cubic-bezier(.22,1,.36,1) .25s forwards;
+}
+.grad{
+  background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 50%,var(--accent3) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-size:200%;
+  animation:gradShift 4s ease infinite;
+}
+.hero-sub{
+  font-size:1.1rem;color:var(--muted);line-height:1.9;
+  margin-bottom:2.5rem;max-width:520px;
+  opacity:0;animation:slideUp .8s cubic-bezier(.22,1,.36,1) .4s forwards;
+}
+.hero-btns{
+  display:flex;gap:1rem;flex-wrap:wrap;
+  opacity:0;animation:slideUp .8s cubic-bezier(.22,1,.36,1) .55s forwards;
+}
+.hero-stats{
+  display:flex;gap:2.5rem;margin-top:3rem;padding-top:2.5rem;
+  border-top:1px solid var(--border);
+  opacity:0;animation:slideUp .8s cubic-bezier(.22,1,.36,1) .7s forwards;
+}
+.stat-num{
+  font-size:2.2rem;font-weight:900;line-height:1;
+  background:linear-gradient(135deg,var(--accent2),var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.stat-label{font-size:.75rem;color:var(--muted);margin-top:.3rem}
+
+/* ───── الكارت البرمجي ───── */
+.hero-visual{
+  flex:1;display:flex;flex-direction:column;
+  align-items:center;gap:1.5rem;
+  opacity:0;animation:slideLeft .9s cubic-bezier(.22,1,.36,1) .3s forwards;
+}
+.orbit-wrap{position:relative;width:100%;max-width:420px}
+.orbit-ring{
+  position:absolute;
+  border:1px dashed rgba(108,99,255,.2);border-radius:50%;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  animation:spin 20s linear infinite;
+  pointer-events:none;
+}
+.orbit-dot{
+  position:absolute;width:8px;height:8px;border-radius:50%;
+  background:var(--accent2);box-shadow:0 0 10px var(--accent2);
+  top:-4px;left:50%;margin-left:-4px;
+}
+.code-card{
+  background:rgba(20,20,35,.8);
+  border:1px solid var(--border);
+  border-radius:20px;padding:1.6rem;
+  width:100%;max-width:420px;
+  backdrop-filter:blur(20px);
+  box-shadow:0 24px 64px rgba(0,0,0,.6),0 0 0 1px rgba(108,99,255,.1);
+  animation:float 5s ease-in-out infinite;
+}
+.code-header{display:flex;align-items:center;gap:.5rem;margin-bottom:1.3rem}
+.dot{width:12px;height:12px;border-radius:50%}
+.d1{background:#ff5f57}.d2{background:#febc2e}.d3{background:#28c840}
+.code-ttl{color:var(--muted);font-size:.78rem;margin-right:auto;letter-spacing:.5px}
+.code-line{
+  font-family:monospace;font-size:.84rem;line-height:2.1;
+  display:flex;align-items:center;gap:.5rem;
+}
+.ln {color:rgba(136,136,168,.35);min-width:18px;text-align:right;font-size:.73rem}
+.kw {color:#c792ea}
+.fn {color:#82aaff}
+.str{color:#c3e88d}
+.cm {color:rgba(136,136,168,.55)}
+.num{color:#f78c6c}
+.op {color:#89ddff}
+.cur{
+  display:inline-block;width:2px;height:.9rem;
+  background:var(--accent2);
+  animation:blink 1s step-end infinite;
+  vertical-align:middle;
+}
+.floating-tags{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center}
+.ftag{
+  background:rgba(255,255,255,.06);border:1px solid var(--border);
+  padding:.35rem .9rem;border-radius:50px;font-size:.75rem;color:var(--muted);
+  transition:all .3s;cursor:default;
+}
+.ftag:hover{background:rgba(108,99,255,.12);border-color:var(--accent);color:var(--accent)}
+.ftag.on{color:var(--accent2);border-color:rgba(0,212,170,.4);background:rgba(0,212,170,.08)}

@@ -1,0 +1,158 @@
+.tech-section{
+  padding:3.5rem 3rem;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.tech-label{
+  color:var(--muted);font-size:.82rem;
+  text-align:center;margin-bottom:1.8rem;
+  letter-spacing:1px;text-transform:uppercase;
+}
+.tech-grid{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center}
+.tpill{
+  background:rgba(255,255,255,.04);border:1px solid var(--border);
+  padding:.5rem 1.2rem;border-radius:50px;font-size:.84rem;
+  display:flex;align-items:center;gap:.5rem;
+  transition:all .25s;cursor:default;
+  opacity:0;
+}
+.tpill.revealed{opacity:1;animation:popIn .4s cubic-bezier(.22,1,.36,1) both}
+.tpill:hover{
+  border-color:var(--accent);
+  background:rgba(108,99,255,.1);
+  transform:translateY(-3px) scale(1.04);
+}
+.tdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.srv-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:18px;padding:2rem;
+  transition:transform .35s cubic-bezier(.22,1,.36,1),border-color .3s,box-shadow .3s;
+  cursor:pointer;position:relative;overflow:hidden;
+}
+.srv-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--gc,rgba(108,99,255,.1)),transparent 70%);
+  opacity:0;transition:opacity .35s;
+}
+.srv-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(108,99,255,.45);
+  box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+.srv-card:hover::before{opacity:1}
+.srv-ico{
+  width:58px;height:58px;border-radius:14px;font-size:1.6rem;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1.3rem;
+  background:rgba(255,255,255,.06);border:1px solid var(--border);
+  transition:transform .3s;
+}
+.srv-card:hover .srv-ico{transform:scale(1.1) rotate(-5deg)}
+.srv-title{font-size:1.08rem;font-weight:700;margin-bottom:.6rem}
+.srv-desc{font-size:.86rem;color:var(--muted);line-height:1.75}
+.srv-arr{
+  margin-top:1.3rem;color:var(--accent2);
+  font-size:.85rem;font-weight:600;
+  display:flex;align-items:center;gap:.3rem;
+  transition:gap .3s;
+}
+.srv-card:hover .srv-arr{gap:.6rem}
+.team-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:2rem;max-width:860px;
+}
+.team-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:24px;padding:2.5rem 2rem;text-align:center;
+  position:relative;overflow:hidden;
+  transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s;
+}
+.team-card::before{
+  content:'';position:absolute;
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,var(--tc,rgba(108,99,255,.15)),transparent 70%);
+  top:-60px;right:-60px;transition:transform .5s;
+}
+.team-card:hover::before{transform:scale(1.4)}
+.team-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 24px 60px rgba(0,0,0,.5);
+}
+.team-avatar{
+  width:100px;height:100px;border-radius:50%;
+  margin:0 auto 1.5rem;
+  display:flex;align-items:center;justify-content:center;
+  font-size:2rem;font-weight:900;
+  position:relative;z-index:1;
+  transition:transform .4s;
+}
+.team-card:hover .team-avatar{transform:scale(1.08)}
+.avatar-ring{
+  position:absolute;inset:-4px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  z-index:-1;
+  animation:spinSlow 6s linear infinite;
+}
+.team-name{font-size:1.25rem;font-weight:900;margin-bottom:.3rem;position:relative;z-index:1}
+.team-role{font-size:.82rem;color:var(--accent2);margin-bottom:.8rem;font-weight:600;letter-spacing:.5px;position:relative;z-index:1}
+.team-bio{font-size:.88rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem;position:relative;z-index:1}
+.team-skills{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;position:relative;z-index:1}
+.skill-tag{
+  background:rgba(255,255,255,.06);border:1px solid var(--border);
+  padding:.28rem .75rem;border-radius:50px;font-size:.74rem;color:var(--muted);
+  transition:all .25s;
+}
+.team-card:hover .skill-tag{border-color:rgba(108,99,255,.35);color:var(--text)}
+.exp-badge{
+  display:inline-flex;align-items:center;gap:.4rem;
+  margin-top:1rem;
+  background:rgba(0,212,170,.1);border:1px solid rgba(0,212,170,.25);
+  padding:.3rem .85rem;border-radius:50px;font-size:.75rem;color:var(--accent2);
+  position:relative;z-index:1;
+}
+.cta-wrap{
+  margin:2rem 3rem 3rem;border-radius:28px;padding:4.5rem 3rem;
+  background:linear-gradient(135deg,rgba(108,99,255,.18),rgba(0,212,170,.12));
+  border:1px solid rgba(108,99,255,.3);text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-wrap::before,.cta-wrap::after{
+  content:'';position:absolute;border-radius:50%;pointer-events:none;
+}
+.cta-wrap::before{
+  width:400px;height:400px;
+  background:radial-gradient(circle,rgba(108,99,255,.25),transparent 70%);
+  top:-150px;right:-80px;
+}
+.cta-wrap::after{
+  width:300px;height:300px;
+  background:radial-gradient(circle,rgba(0,212,170,.15),transparent 70%);
+  bottom:-120px;left:-60px;
+}
+.cta-title{font-size:2.6rem;font-weight:900;margin-bottom:1rem;position:relative;z-index:1;letter-spacing:-.5px}
+.cta-sub{color:var(--muted);font-size:1rem;margin-bottom:2.5rem;line-height:1.8;position:relative;z-index:1}
+.contact-ways{
+  display:flex;gap:2rem;justify-content:center;
+  flex-wrap:wrap;margin-top:2rem;position:relative;z-index:1;
+}
+.contact-item{
+  display:flex;align-items:center;gap:.6rem;
+  color:var(--muted);font-size:.9rem;
+  padding:.5rem 1rem;border-radius:50px;
+  border:1px solid var(--border);
+  transition:border-color .3s,color .3s;
+  background:rgba(255,255,255,.03);
+}
+.contact-item:hover{border-color:var(--accent2);color:var(--text)}
+.contact-item a{color:var(--accent2);text-decoration:none}
+
+footer{
+  padding:2rem 3rem;
+  border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.f-copy{color:var(--muted);font-size:.8rem}
+.f-links{display:flex;gap:1.5rem}
+.f-links a{color:var(--muted);text-decoration:none;font-size:.8rem;transition:color .3s}
+.f-links a:hover{color:var(--accent2)}
