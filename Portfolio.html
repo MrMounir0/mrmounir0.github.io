@@ -283,7 +283,7 @@ h1{
   background:var(--card);border:1px solid var(--border);
   border-radius:18px;padding:2rem;
   transition:transform .35s cubic-bezier(.22,1,.36,1),border-color .3s,box-shadow .3s;
-  cursor:pointer;position:relative;overflow:hidden;
+  position:relative;overflow:hidden;
 }
 .srv-card::before{
   content:'';position:absolute;inset:0;
@@ -305,8 +305,27 @@ h1{
 .srv-card:hover .srv-ico{transform:scale(1.1) rotate(-5deg)}
 .srv-title{font-size:1.08rem;font-weight:700;margin-bottom:.6rem}
 .srv-desc{font-size:.86rem;color:var(--muted);line-height:1.75}
-.srv-arr{margin-top:1.3rem;color:var(--accent2);font-size:.85rem;font-weight:600;display:flex;align-items:center;gap:.3rem;transition:gap .3s}
-.srv-card:hover .srv-arr{gap:.6rem}
+.srv-actions{display:flex;gap:.7rem;align-items:center;margin-top:1.3rem;position:relative;z-index:1}
+.srv-toggle{
+  color:var(--accent2);font-size:.85rem;font-weight:700;
+  display:inline-flex;align-items:center;gap:.35rem;
+  background:transparent;border:none;padding:0;
+  font-family:'Cairo',sans-serif;cursor:pointer;
+  transition:gap .3s,color .3s;
+}
+.srv-toggle:hover{gap:.65rem;color:var(--text)}
+.srv-more{
+  position:relative;z-index:1;
+  max-height:0;opacity:0;overflow:hidden;
+  color:var(--muted);font-size:.84rem;line-height:1.85;
+  border-top:1px solid transparent;
+  margin-top:0;
+  transition:max-height .45s cubic-bezier(.22,1,.36,1),opacity .3s,margin-top .3s,border-color .3s;
+}
+.srv-more.open{max-height:360px;opacity:1;margin-top:1rem;border-color:var(--border);padding-top:1rem}
+.srv-more ul{list-style:none;display:grid;gap:.55rem}
+.srv-more li{display:flex;gap:.45rem;align-items:flex-start}
+.srv-more li::before{content:'•';color:var(--accent2);font-weight:900;line-height:1.6}
 
 /* ───── TEAM ───── */
 .team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;max-width:860px}
@@ -530,24 +549,24 @@ footer{
 <section class="hero" id="home">
   <div class="hero-text">
     <div class="badge"><span class="live-dot"></span> متاح للمشاريع الجديدة</div>
-    <h1>خبرة <span class="grad">10 سنوات</span><br>في عالم البرمجة</h1>
-    <p class="hero-sub">فريق متخصص في بناء المواقع الإلكترونية الاحترافية، الأنظمة البرمجية المتكاملة، وحلول إدارة الموارد البشرية — بكود نظيف وأداء استثنائي.</p>
+    <h1>خبرة <span class="grad">قوية</span><br>في عالم البرمجة</h1>
+    <p class="hero-sub">نطوّر مواقع وأنظمة أعمال عالية الاعتمادية، بواجهات واضحة وبنية تقنية قابلة للتوسع، مع تركيز حقيقي على الأداء وسهولة الاستخدام.</p>
     <div class="hero-btns">
       <button class="btn-p" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">اكتشف خدماتنا ↓</button>
       <button class="btn-o" onclick="document.getElementById('team').scrollIntoView({behavior:'smooth'})">تعرّف على الفريق</button>
     </div>
     <div class="hero-stats">
       <div class="stat">
-        <div class="stat-num" data-target="50">0</div>
-        <div class="stat-label">مشروع منجز</div>
+        <div class="stat-num" data-target="3">0</div>
+        <div class="stat-label">مسارات خدمة</div>
       </div>
       <div class="stat">
-        <div class="stat-num" data-target="98">0</div>
-        <div class="stat-label">% رضا العملاء</div>
+        <div class="stat-num" data-target="6">0</div>
+        <div class="stat-label">تقنيات أساسية</div>
       </div>
       <div class="stat">
-        <div class="stat-num" data-target="10">0</div>
-        <div class="stat-label">سنوات خبرة</div>
+        <div class="stat-num" data-target="24">0</div>
+        <div class="stat-label">ساعة متابعة</div>
       </div>
     </div>
   </div>
@@ -564,7 +583,7 @@ footer{
         </div>
         <div class="code-line"><span class="ln">1</span><span class="kw">const</span> <span class="fn">team</span> <span class="op">=</span> {</div>
         <div class="code-line"><span class="ln">2</span>&nbsp;&nbsp;<span class="fn">size</span><span class="op">:</span> <span class="num">2</span><span class="op">,</span></div>
-        <div class="code-line"><span class="ln">3</span>&nbsp;&nbsp;<span class="fn">experience</span><span class="op">:</span> <span class="str">"10yr"</span><span class="op">,</span></div>
+        <div class="code-line"><span class="ln">3</span>&nbsp;&nbsp;<span class="fn">quality</span><span class="op">:</span> <span class="str">"production"</span><span class="op">,</span></div>
         <div class="code-line"><span class="ln">4</span>&nbsp;&nbsp;<span class="fn">stack</span><span class="op">:</span> [<span class="str">"React"</span><span class="op">,</span><span class="str">"Node"</span><span class="op">,</span><span class="str">"HR"</span>]<span class="op">,</span></div>
         <div class="code-line"><span class="ln">5</span>&nbsp;&nbsp;<span class="cm">// ✓ جاهزون للإنتاج</span></div>
         <div class="code-line"><span class="ln">6</span>&nbsp;&nbsp;<span class="fn">ready</span><span class="op">:</span> <span class="kw">true</span> <span class="cur"></span></div>
@@ -605,26 +624,47 @@ footer{
   <div class="reveal">
     <div class="slabel">خدماتنا</div>
     <h2 class="stitle">ماذا نقدم لك؟</h2>
-    <p class="ssub">حلول رقمية متكاملة تجمع بين الجودة، الأداء العالي، والتصميم العصري — مصممة خصيصاً لاحتياجات عملك.</p>
+    <p class="ssub">نقدّم حلولًا رقمية عملية تساعدك على إطلاق حضورك، تنظيم عملياتك، وتحويل أفكارك إلى منتجات واضحة وسهلة التطوير.</p>
   </div>
   <div class="srv-grid">
     <div class="srv-card reveal d1r" style="--gc:rgba(108,99,255,.12)">
       <div class="srv-ico">🌐</div>
       <div class="srv-title">تصميم المواقع</div>
-      <div class="srv-desc">مواقع إلكترونية احترافية بتصاميم عصرية وأداء فائق السرعة، متوافقة مع جميع الأجهزة ومحسّنة لمحركات البحث.</div>
-      <div class="srv-arr">اعرف أكثر →</div>
+      <div class="srv-desc">مواقع سريعة وواضحة تعكس هوية مشروعك وتمنح الزائر تجربة مريحة على الجوال والكمبيوتر.</div>
+      <div class="srv-actions"><button class="srv-toggle" type="button" aria-expanded="false">اعرف أكثر →</button></div>
+      <div class="srv-more" aria-hidden="true">
+        <ul>
+          <li>تصميم واجهات منظمة تعزز الثقة وتسهل الوصول للمعلومة.</li>
+          <li>بناء صفحات متجاوبة ومحسنة للسرعة ومحركات البحث.</li>
+          <li>تجهيز نماذج التواصل، الربط بالبريد، وروابط التواصل المباشر.</li>
+        </ul>
+      </div>
     </div>
     <div class="srv-card reveal d2r" style="--gc:rgba(0,212,170,.1)">
       <div class="srv-ico">⚙️</div>
       <div class="srv-title">الأنظمة البرمجية</div>
-      <div class="srv-desc">تطوير أنظمة مخصصة لإدارة الأعمال، ERPs متكاملة، APIs احترافية، وحلول برمجية قابلة للتوسع والتخصيص الكامل.</div>
-      <div class="srv-arr">اعرف أكثر →</div>
+      <div class="srv-desc">أنظمة مخصصة تنظّم العمل اليومي، تقلل التكرار، وتمنحك لوحة واضحة لمتابعة بياناتك وعملياتك.</div>
+      <div class="srv-actions"><button class="srv-toggle" type="button" aria-expanded="false">اعرف أكثر →</button></div>
+      <div class="srv-more" aria-hidden="true">
+        <ul>
+          <li>تحليل احتياج العمل وتحويله إلى شاشات وسير عمل قابل للاستخدام.</li>
+          <li>تطوير قواعد بيانات وواجهات إدارة وربط آمن بين الخدمات.</li>
+          <li>إعداد النظام ليكون قابلًا للتوسع والصيانة مع نمو المشروع.</li>
+        </ul>
+      </div>
     </div>
     <div class="srv-card reveal d3r" style="--gc:rgba(255,107,107,.1)">
       <div class="srv-ico">👥</div>
       <div class="srv-title">أنظمة HR</div>
-      <div class="srv-desc">حلول متكاملة لإدارة الموارد البشرية: الرواتب، الحضور، التوظيف، تقييم الأداء — بواجهة سهلة وتقارير ذكية.</div>
-      <div class="srv-arr">اعرف أكثر →</div>
+      <div class="srv-desc">حلول موارد بشرية تساعد الإدارة على تنظيم الموظفين، الحضور، الطلبات، والتقارير من مكان واحد.</div>
+      <div class="srv-actions"><button class="srv-toggle" type="button" aria-expanded="false">اعرف أكثر →</button></div>
+      <div class="srv-more" aria-hidden="true">
+        <ul>
+          <li>ملفات موظفين واضحة مع صلاحيات مناسبة لكل دور.</li>
+          <li>إدارة الحضور والإجازات والطلبات الداخلية بطريقة مبسطة.</li>
+          <li>تقارير تساعد على المتابعة واتخاذ القرار بسرعة أكبر.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -633,8 +673,8 @@ footer{
 <section class="section" id="team" style="padding-top:0">
   <div class="reveal">
     <div class="slabel">فريق العمل</div>
-    <h2 class="stitle">العقول خلف المشاريع</h2>
-    <p class="ssub">مهندسون خبراء يجمعون بين العمق التقني والإبداع في التصميم لتقديم حلول تتجاوز التوقعات.</p>
+    <h2 class="stitle">العقول خلف التنفيذ</h2>
+    <p class="ssub">نعمل بمنهجية واضحة تجمع بين فهم الاحتياج، جودة الكود، وتجربة المستخدم، حتى يصل المشروع بشكل قابل للاستخدام والتطوير.</p>
   </div>
   <div class="team-grid">
 
@@ -648,7 +688,7 @@ footer{
       </div>
       <div class="team-name">المهندس منير الحمصي</div>
       <div class="team-role">مطور Full-Stack &amp; مهندس أنظمة</div>
-      <div class="team-bio">خبير في بناء الأنظمة البرمجية المعقدة وقواعد البيانات عالية الأداء. يتميز بقدرة فائقة على تحليل المشاكل وتصميم حلول قابلة للتوسع تخدم الأعمال على المدى البعيد.</div>
+      <div class="team-bio">متخصص في بناء الأنظمة البرمجية وقواعد البيانات، مع اهتمام كبير بتحليل المتطلبات وتحويلها إلى حلول مستقرة وسهلة الصيانة.</div>
       <div class="team-skills">
         <span class="skill-tag">Node.js</span>
         <span class="skill-tag">React</span>
@@ -657,7 +697,7 @@ footer{
         <span class="skill-tag">AWS</span>
         <span class="skill-tag">Python</span>
       </div>
-      <div class="exp-badge">⚡ خبرة +10 سنوات في تطوير الأنظمة</div>
+      <div class="exp-badge">⚡ تنفيذ تقني منظم وقابل للتطوير</div>
     </div>
 
   </div>
@@ -670,7 +710,7 @@ footer{
 <div class="cta-wrap reveal" id="contact">
   <div class="slabel" style="margin-bottom:1.2rem">تواصل معنا</div>
   <h2 class="cta-title">هل لديك مشروع في ذهنك؟</h2>
-  <p class="cta-sub">لا تتردد في التواصل معنا، سنرد عليك خلال 24 ساعة<br>وسنبدأ العمل على تحويل فكرتك إلى واقع.</p>
+  <p class="cta-sub">شاركنا فكرة مشروعك أو المشكلة التي تريد حلها، وسنقترح لك مسارًا واضحًا للتنفيذ<br>من أول تصور حتى نسخة قابلة للاستخدام.</p>
   <button class="btn-p" onclick="window.location.href='mailto:mnir037@gmail.com'" style="font-size:1rem;padding:1rem 2.8rem">ابدأ المحادثة الآن</button>
   <div class="contact-ways">
     <div class="contact-item">📧 <a href="mailto:mnir037@gmail.com">mnir037@gmail.com</a></div>
@@ -733,6 +773,19 @@ if(mobileClose){mobileClose.addEventListener('click',closeDrawer);}
 if(mobileBackdrop){mobileBackdrop.addEventListener('click',closeDrawer);}
 document.querySelectorAll('.mobile-links a, .mobile-cta a').forEach(function(a){a.addEventListener('click',closeDrawer);});
 window.addEventListener('resize',function(){if(window.innerWidth>980) closeDrawer();});
+
+// ── Service details toggle
+document.querySelectorAll('.srv-card').forEach(function(card){
+  var btn=card.querySelector('.srv-toggle');
+  var details=card.querySelector('.srv-more');
+  if(!btn||!details) return;
+  btn.addEventListener('click',function(){
+    var isOpen=details.classList.toggle('open');
+    btn.textContent=isOpen?'إخفاء ↑':'اعرف أكثر →';
+    btn.setAttribute('aria-expanded',isOpen?'true':'false');
+    details.setAttribute('aria-hidden',isOpen?'false':'true');
+  });
+});
 
 // ── Smooth scroll for nav links
 document.querySelectorAll('a[href^="#"]').forEach(function(a){
