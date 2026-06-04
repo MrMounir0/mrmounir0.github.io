@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>فريق التطوير - برمجيات وأنظمة HR</title>
+<title>فريق التطوير - برمجيات وأنظمة أعمال</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
@@ -246,26 +246,6 @@ h1{
   top:-4px;left:50%;margin-left:-4px;
 }
 
-/* ───── TECH ───── */
-.tech-section{
-  padding:3.5rem 3rem;
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-}
-.tech-label{color:var(--muted);font-size:.82rem;text-align:center;margin-bottom:1.8rem;letter-spacing:1px;text-transform:uppercase}
-.tech-grid{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center}
-.tpill{
-  background:rgba(255,255,255,.04);border:1px solid var(--border);
-  padding:.5rem 1.2rem;border-radius:50px;font-size:.84rem;
-  display:flex;align-items:center;gap:.5rem;
-  transition:all .25s;cursor:default;
-  opacity:0;
-}
-.tpill.revealed{opacity:1;animation:popIn .4s cubic-bezier(.22,1,.36,1) both}
-.tpill.revealed .tdot{animation:dotPulse .7s cubic-bezier(.22,1,.36,1) both}
-.tpill:hover{border-color:var(--accent);background:rgba(108,99,255,.1);transform:translateY(-3px) scale(1.04)}
-.tdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-
 /* ───── SHARED SECTION ───── */
 .section{padding:5rem 3rem}
 .slabel{
@@ -278,7 +258,7 @@ h1{
 .ssub{color:var(--muted);font-size:1rem;max-width:520px;margin-bottom:3rem;line-height:1.8}
 
 /* ───── SERVICES ───── */
-.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.srv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
 .srv-card{
   background:var(--card);border:1px solid var(--border);
   border-radius:18px;padding:2rem;
@@ -456,12 +436,6 @@ footer{
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 @keyframes livepulse{0%,100%{box-shadow:0 0 8px var(--accent2)}50%{box-shadow:0 0 18px var(--accent2),0 0 30px rgba(0,212,170,.3)}}
 @keyframes gradShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-@keyframes popIn{from{opacity:0;transform:scale(.8) translateY(10px)}to{opacity:1;transform:none}}
-@keyframes dotPulse{
-  0%{transform:scale(.35);box-shadow:0 0 0 rgba(255,255,255,0)}
-  55%{transform:scale(1.8);box-shadow:0 0 18px currentColor}
-  100%{transform:scale(1);box-shadow:0 0 10px rgba(255,255,255,.12)}
-}
 @keyframes iconDrop{
   0%{opacity:0;transform:translateY(-18px) scale(.78) rotate(10deg);filter:blur(4px)}
   58%{opacity:1;transform:translateY(4px) scale(1.08) rotate(-6deg);filter:blur(0)}
@@ -476,7 +450,7 @@ footer{
   .hero-text,.hero-visual{width:100%}
   .hero-stats{flex-wrap:wrap;gap:1rem 1.5rem}
   .team-grid,.srv-grid,.testi-grid{grid-template-columns:1fr}
-  .section,.tech-section{padding:4rem 1rem}
+  .section{padding:4rem 1rem}
   .cta-wrap{margin:1rem 1rem 2rem;padding:3rem 1rem}
   footer{flex-direction:column;gap:.8rem;padding:1.2rem 1rem;align-items:flex-start}
   .f-links{flex-wrap:wrap;gap:.8rem 1rem}
@@ -584,7 +558,7 @@ footer{
         <div class="code-line"><span class="ln">1</span><span class="kw">const</span> <span class="fn">team</span> <span class="op">=</span> {</div>
         <div class="code-line"><span class="ln">2</span>&nbsp;&nbsp;<span class="fn">size</span><span class="op">:</span> <span class="num">2</span><span class="op">,</span></div>
         <div class="code-line"><span class="ln">3</span>&nbsp;&nbsp;<span class="fn">quality</span><span class="op">:</span> <span class="str">"production"</span><span class="op">,</span></div>
-        <div class="code-line"><span class="ln">4</span>&nbsp;&nbsp;<span class="fn">stack</span><span class="op">:</span> [<span class="str">"React"</span><span class="op">,</span><span class="str">"Node"</span><span class="op">,</span><span class="str">"HR"</span>]<span class="op">,</span></div>
+        <div class="code-line"><span class="ln">4</span>&nbsp;&nbsp;<span class="fn">stack</span><span class="op">:</span> [<span class="str">"React"</span><span class="op">,</span><span class="str">"Node"</span><span class="op">,</span><span class="str">"ERP"</span>]<span class="op">,</span></div>
         <div class="code-line"><span class="ln">5</span>&nbsp;&nbsp;<span class="cm">// ✓ جاهزون للإنتاج</span></div>
         <div class="code-line"><span class="ln">6</span>&nbsp;&nbsp;<span class="fn">ready</span><span class="op">:</span> <span class="kw">true</span> <span class="cur"></span></div>
         <div class="code-line"><span class="ln">7</span>}</div>
@@ -594,30 +568,11 @@ footer{
       <span class="ftag on">🟢 متصل الآن</span>
       <span class="ftag">React</span>
       <span class="ftag">Node.js</span>
-      <span class="ftag">HR Systems</span>
+      <span class="ftag">Business Systems</span>
       <span class="ftag">Python</span>
     </div>
   </div>
 </section>
-
-<!-- ═══ TECH ═══ -->
-<div class="tech-section reveal">
-  <div class="tech-label">▸ التقنيات التي نتقنها</div>
-  <div class="tech-grid" id="techGrid">
-    <div class="tpill"><span class="tdot" style="background:#61dafb"></span>React</div>
-    <div class="tpill"><span class="tdot" style="background:#339933"></span>Node.js</div>
-    <div class="tpill"><span class="tdot" style="background:#3776ab"></span>Python</div>
-    <div class="tpill"><span class="tdot" style="background:#4479a1"></span>MySQL</div>
-    <div class="tpill"><span class="tdot" style="background:#47a248"></span>MongoDB</div>
-    <div class="tpill"><span class="tdot" style="background:#e34f26"></span>HTML/CSS</div>
-    <div class="tpill"><span class="tdot" style="background:#f7df1e"></span>JavaScript</div>
-    <div class="tpill"><span class="tdot" style="background:#ff6c37"></span>REST APIs</div>
-    <div class="tpill"><span class="tdot" style="background:#2496ed"></span>Docker</div>
-    <div class="tpill"><span class="tdot" style="background:#ff9900"></span>AWS</div>
-    <div class="tpill"><span class="tdot" style="background:#6db33f"></span>Spring Boot</div>
-    <div class="tpill"><span class="tdot" style="background:#764abc"></span>Redux</div>
-  </div>
-</div>
 
 <!-- ═══ SERVICES ═══ -->
 <section class="section" id="services">
@@ -640,29 +595,16 @@ footer{
         </ul>
       </div>
     </div>
-    <div class="srv-card reveal d2r" style="--gc:rgba(0,212,170,.1)">
-      <div class="srv-ico">⚙️</div>
-      <div class="srv-title">الأنظمة البرمجية</div>
-      <div class="srv-desc">أنظمة مخصصة تنظّم العمل اليومي، تقلل التكرار، وتمنحك لوحة واضحة لمتابعة بياناتك وعملياتك.</div>
-      <div class="srv-actions"><button class="srv-toggle" type="button" aria-expanded="false">اعرف أكثر →</button></div>
-      <div class="srv-more" aria-hidden="true">
-        <ul>
-          <li>تحليل احتياج العمل وتحويله إلى شاشات وسير عمل قابل للاستخدام.</li>
-          <li>تطوير قواعد بيانات وواجهات إدارة وربط آمن بين الخدمات.</li>
-          <li>إعداد النظام ليكون قابلًا للتوسع والصيانة مع نمو المشروع.</li>
-        </ul>
-      </div>
-    </div>
     <div class="srv-card reveal d3r" style="--gc:rgba(255,107,107,.1)">
-      <div class="srv-ico">👥</div>
-      <div class="srv-title">أنظمة HR</div>
-      <div class="srv-desc">حلول موارد بشرية تساعد الإدارة على تنظيم الموظفين، الحضور، الطلبات، والتقارير من مكان واحد.</div>
+      <div class="srv-ico">⚙️</div>
+      <div class="srv-title">تصميم أنظمة</div>
+      <div class="srv-desc">نصمم أنظمة عملية تمنح مشروعك طريقة عمل أوضح، من الفواتير والمخزون إلى المبيعات وإدارة العملاء والتقارير.</div>
       <div class="srv-actions"><button class="srv-toggle" type="button" aria-expanded="false">اعرف أكثر →</button></div>
       <div class="srv-more" aria-hidden="true">
         <ul>
-          <li>ملفات موظفين واضحة مع صلاحيات مناسبة لكل دور.</li>
-          <li>إدارة الحضور والإجازات والطلبات الداخلية بطريقة مبسطة.</li>
-          <li>تقارير تساعد على المتابعة واتخاذ القرار بسرعة أكبر.</li>
+          <li>نبدأ بفهم طريقة عملك الفعلية، ثم نحولها إلى شاشات منظمة تسهّل على الفريق الإنجاز اليومي.</li>
+          <li>نبني مسارًا واضحًا للعمليات: إدخال البيانات، المراجعة، الصلاحيات، الإشعارات، والتقارير.</li>
+          <li>نصمم النظام ليكون سهل الاستخدام من أول يوم، وقابلًا للتطوير عندما يكبر مشروعك وتتوسع احتياجاتك.</li>
         </ul>
       </div>
     </div>
@@ -688,14 +630,20 @@ footer{
       </div>
       <div class="team-name">المهندس منير الحمصي</div>
       <div class="team-role">مطور Full-Stack &amp; مهندس أنظمة</div>
-      <div class="team-bio">متخصص في بناء الأنظمة البرمجية وقواعد البيانات، مع اهتمام كبير بتحليل المتطلبات وتحويلها إلى حلول مستقرة وسهلة الصيانة.</div>
+      <div class="team-bio">متخصص في تصميم الأنظمة وقواعد البيانات، مع اهتمام كبير بتحليل المتطلبات وتحويلها إلى حلول مستقرة وسهلة الصيانة.</div>
       <div class="team-skills">
         <span class="skill-tag">Node.js</span>
         <span class="skill-tag">React</span>
-        <span class="skill-tag">MySQL</span>
-        <span class="skill-tag">Docker</span>
-        <span class="skill-tag">AWS</span>
         <span class="skill-tag">Python</span>
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">C#</span>
+        <span class="skill-tag">SQL Server</span>
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">Oracle</span>
+        <span class="skill-tag">Flutter</span>
+        <span class="skill-tag">Dart</span>
       </div>
       <div class="exp-badge">⚡ تنفيذ تقني منظم وقابل للتطوير</div>
     </div>
@@ -711,7 +659,6 @@ footer{
   <div class="slabel" style="margin-bottom:1.2rem">تواصل معنا</div>
   <h2 class="cta-title">هل لديك مشروع في ذهنك؟</h2>
   <p class="cta-sub">شاركنا فكرة مشروعك أو المشكلة التي تريد حلها، وسنقترح لك مسارًا واضحًا للتنفيذ<br>من أول تصور حتى نسخة قابلة للاستخدام.</p>
-  <button class="btn-p" onclick="window.location.href='mailto:mnir037@gmail.com'" style="font-size:1rem;padding:1rem 2.8rem">ابدأ المحادثة الآن</button>
   <div class="contact-ways">
     <div class="contact-item">📧 <a href="mailto:mnir037@gmail.com">mnir037@gmail.com</a></div>
     <div class="contact-item">📱 <a class="contact-phone" href="https://api.whatsapp.com/qr/K56VV674SYPPA1?autoload=1&amp;app_absent=0" target="_blank" rel="noopener">+966500834220</a></div>
@@ -816,20 +763,6 @@ var ro=new IntersectionObserver(function(entries){
   });
 },{threshold:.12});
 document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(function(el){ro.observe(el)});
-
-// ── Tech pills stagger
-var tro=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(e.isIntersecting){
-      document.querySelectorAll('.tpill').forEach(function(p,i){
-        setTimeout(function(){p.classList.add('revealed')},i*60);
-      });
-      tro.disconnect();
-    }
-  });
-},{threshold:.2});
-var tg=document.getElementById('techGrid');
-if(tg)tro.observe(tg);
 
 // ── Counter animation
 function animCount(el,target,dur){
