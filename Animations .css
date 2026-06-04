@@ -1,0 +1,169 @@
+/* ══════════════════════════════════
+   animations.css — الحركات والكيفريمز
+   ══════════════════════════════════ */
+
+/* ───── Scroll Reveal Classes ───── */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1);
+}
+
+.reveal-l {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1);
+}
+
+.reveal-r {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1);
+}
+
+    .reveal.vis, .reveal-l.vis, .reveal-r.vis {
+        opacity: 1;
+        transform: none
+    }
+
+/* تأخيرات متتالية */
+.d1r {
+    transition-delay: .1s
+}
+
+.d2r {
+    transition-delay: .2s
+}
+
+.d3r {
+    transition-delay: .3s
+}
+
+.d4r {
+    transition-delay: .4s
+}
+
+.d5r {
+    transition-delay: .5s
+}
+
+/* ───── Keyframes ───── */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(50px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@keyframes float {
+    0%,100% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(-14px)
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%,-50%) rotate(360deg)
+    }
+}
+
+@keyframes spinSlow {
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes blink {
+    0%,100% {
+        opacity: 1
+    }
+
+    50% {
+        opacity: 0
+    }
+}
+
+@keyframes livepulse {
+    0%,100% {
+        box-shadow: 0 0 8px var(--accent2)
+    }
+
+    50% {
+        box-shadow: 0 0 18px var(--accent2),0 0 30px rgba(0,212,170,.3)
+    }
+}
+
+@keyframes gradShift {
+    0%,100% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(.8) translateY(10px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@keyframes drift {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(1)
+    }
+
+    10% {
+        opacity: .6
+    }
+
+    90% {
+        opacity: .2
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-100vh) scale(.5)
+    }
+}
